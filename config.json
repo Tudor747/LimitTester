@@ -1,0 +1,9 @@
+{
+  "requestsPerMinute": 600,
+  "durationSeconds": 30,
+  "maxConcurrency": 50,
+  "cpuMs": 10,
+  "memoryMbPerRequest": 2,
+  "holdMs": 100,
+  "responseKb": 64
+}

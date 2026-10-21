@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config.json:/app/config.json:ro
+    restart: unless-stopped
+  load:
+    build: .
+    profiles: ["test"]
+    command: ["node", "load-test.js"]
+    environment:
+      TARGET_URL: http://app:3000/
+    volumes:
+      - ./config.json:/app/config.json:ro
